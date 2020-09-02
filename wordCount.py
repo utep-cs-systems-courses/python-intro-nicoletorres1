@@ -1,16 +1,15 @@
 #! /usr/bin/env python3
+import re
+import os
+import sys
+#import Counter
 
 #import libraries
 #re is regular expressions
 #os functions for interacting w operating systems
 #system to access functions and lists
 
-import re
-import os
-import sys
-#import Counter
-
-#contains the command-line arguments passed
+# contains the command-line arguments passed
 inputFname = sys.argv[1]
 outputFname = sys.argv[2]
 
@@ -34,13 +33,15 @@ for word in x:
     biggerlist.append(word.split())
 #print(biggerlist)
 
-# initialize dictionary
+# initialize dictionary value & key
 dictionary = {}
 
 # count. keeps track of the total the number of times each word occurs in the text file
+# if the word appears more than once increment by 1
 for smallerlist in biggerlist:
     for word in smallerlist:
-
+        # add the word to dictionary with count 1
+        # or increment the word already in dictionary by 1
         if word not in dictionary:
             dictionary[word] = 1
         else:
